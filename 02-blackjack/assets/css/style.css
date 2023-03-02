@@ -1,0 +1,36 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    /* background-image: linear-gradient(#006D37, #004A21); */
+    /* background-size: cover; */
+}
+
+.wrap {
+    height: 570px;
+    background-image: linear-gradient(#44A36B, #004A21);
+    background-size: cover;
+}
+
+.titulo {
+    padding: 10px;
+    background: linear-gradient(#B25C2A, #5A1700);
+    text-align: center;
+    color: white;
+    background-color: black;
+    font-weight: bolder;
+    font-size: 1.2rem;
+    text-shadow: 5px 5px 10px #390800;
+}
+
+.carta {
+    position: relative;
+    width: 100px;
+    left: 70px;
+    margin-left: -50px;
+}
+
+#computadora-cartas,
+#jugador-cartas {
+    height: 160px;
+}

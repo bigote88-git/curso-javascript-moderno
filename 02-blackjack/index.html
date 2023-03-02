@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Jack</title>
+    <link rel="stylesheet" href="assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+
+<body>
+    <div class="wrap">
+        <header class="titulo">BLACK JACK</header>
+        <div class="row mt-2">
+            <div class="col text-center">
+                <button id="btn-nuevo-juego" class="btn btn-danger">Nuevo juego</button>
+                <button id="btn-pedir-carta" class="btn btn-primary">Pedir carta</button>
+                <button id="btn-detener" class=" btn btn-primary">Detener</button>
+            </div>
+        </div>
+
+        <div class="row container">
+            <div class="col">
+                <h2>Jugador 1 - <small>0</small></h2>
+                <div id="jugador-cartas">
+                </div>
+
+            </div>
+        </div>
+        <div class="row container mt-2 ">
+            <div class="col">
+                <h2>Computadora - <small id="computadora-marcador">0</small></h2>
+                <div id="computadora-cartas">
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <script src="assets/js/app.js "></script>
+</body>
+
+</html>
