@@ -14,6 +14,9 @@ const renderTodos = (elementID, todos = []) => {
     if (!htmlUL)
         throw new Error(`El elemento ${ elementID } no existe`);
 
+    // borramos el contenido previo
+    htmlUL.innerHTML = '';
+
     todos.forEach(todo => {
         htmlUL.append(createHTMLTodo(todo))
     });

@@ -17,8 +17,23 @@ const state = {
     filter: Filters.All
 };
 
+const initStore = () => {
+    console.log(state);
+    console.log('Init Store');
+    loadStorage();
+}
+
 const loadStorage = () => {
-    throw new Error('Not implemented');
+    if (!localStorage.getItem('state'))
+        return;
+
+    const { todos = [], filter = Filters.All } = JSON.parse(localStorage.getItem('state'))
+    state.todos = todos;
+    state.filter = filter;
+}
+
+const saveToLocalStorage = () => {
+    localStorage.setItem('state', JSON.stringify(state));
 }
 
 const getTodos = (filter = Filters.All) => {
@@ -39,6 +54,7 @@ const addTodo = (description) => {
         throw new Error('Description is not valid');
 
     state.todos.push(new Todo(description));
+    saveToLocalStorage();
 }
 
 const toggleTodo = (todoID) => {
@@ -51,6 +67,7 @@ const toggleTodo = (todoID) => {
     findTodo.done = !findTodo.done;
 
     state.todos[indexTodo] = findTodo;
+    saveToLocalStorage();
 }
 
 const deleteTodo = (todoID) => {
@@ -58,13 +75,15 @@ const deleteTodo = (todoID) => {
         throw new Error('todoID is not defined');
 
     state.todos = state.todos.filter(todo => todo.id !== todoID);
+    saveToLocalStorage();
 }
 
 const deleteCompleted = () => {
-    if (state.todos)
+    if (!state.todos)
         throw new Error('Not element to deleted');
 
     state.todos = state.todos.filter(todo => !todo.done);
+    saveToLocalStorage();
 }
 
 const setFilter = (newFilter = Filters.All) => {
@@ -72,15 +91,11 @@ const setFilter = (newFilter = Filters.All) => {
         throw new Error('Filter is not defined');
 
     state.filter = newFilter;
+    saveToLocalStorage();
 }
 
 const getCurrentFilter = () => {
     return state.filter;
-}
-
-const initStore = () => {
-    console.log(state);
-    console.log('Init Store');
 }
 
 export default {
@@ -91,5 +106,6 @@ export default {
     deleteTodo,
     deleteCompleted,
     setFilter,
-    getCurrentFilter
+    getCurrentFilter,
+    Filters
 };
