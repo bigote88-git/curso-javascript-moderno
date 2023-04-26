@@ -9,6 +9,8 @@ import { asyncComponent } from './src/concepts/05-async';
 import { asyncAwaitComponent } from './src/concepts/06-async-await';
 import { asyncAwaitSequenceComponent } from './src/concepts/07-async-await-sequence';
 import { forAwaitComponent } from './src/concepts/08-for-await';
+import { generatorFunctionComponent } from './src/concepts/09-generators';
+import { generatorAsyncComponent } from './src/concepts/10-generator-async';
 
 document.querySelector('#app').innerHTML = `
   <div>
@@ -19,7 +21,7 @@ document.querySelector('#app').innerHTML = `
       <img src="${javascriptLogo}" class="logo vanilla" alt="JavaScript logo" />
     </a>
     <h1>Hello Vite!</h1>    
-    <div class="card">    
+    <div class="card">     
     </div>    
   </div>
 `
@@ -33,4 +35,6 @@ const cardElement = document.querySelector('.card');
 //asyncComponent(cardElement);
 //asyncAwaitComponent(cardElement);
 //asyncAwaitSequenceComponent(cardElement);
-forAwaitComponent(cardElement);
+//forAwaitComponent(cardElement);
+// generatorFunctionComponent(cardElement);
+generatorAsyncComponent(cardElement);
