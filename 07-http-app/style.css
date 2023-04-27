@@ -88,6 +88,14 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
+img{
+    width: 250px;
+    height: 250px;
+    display: flex;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 @media (prefers-color-scheme: light) {
      :root {
         color: #213547;
@@ -100,3 +108,4 @@ button:focus-visible {
         background-color: #f9f9f9;
     }
 }
+
