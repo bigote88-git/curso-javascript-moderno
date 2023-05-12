@@ -1,0 +1,24 @@
+table {
+    background-color: #374151;
+    border-radius: 5px;
+    padding: 8px;
+    border: 1px solid #000;
+    margin-bottom: 10px;
+}
+
+table thead {
+    color: #747C89;
+}
+
+table thead th {
+    padding: 0px 15px;
+}
+
+table tbody tr {
+    background-color: #1F2937;
+    color: #FFF;
+}
+
+.td-px-1 {
+    padding-left: 0.5rem;
+}
